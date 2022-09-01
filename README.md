@@ -4,4 +4,4 @@
 
 - React, NextJS
 - Typescript
-- Tailwind
+- styled components
