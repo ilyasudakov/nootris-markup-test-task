@@ -4,3 +4,4 @@
 
 - React, NextJS
 - Typescript
+- Tailwind
