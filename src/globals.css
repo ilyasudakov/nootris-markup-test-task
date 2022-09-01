@@ -6,16 +6,37 @@
   --yellow: #ffee00;
   --orange: #fcb500;
   --white: #fff;
+
+  --xs: 420px;
+  --sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
+  --2xl: 1440px;
+
   background-color: var(--black);
   color: var(--white);
   font-size: 18px;
 }
 
 html,
-body {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   padding: 0;
   margin: 0;
   font-family: 'Rubik', sans-serif;
+  font-weight: normal;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -23,7 +44,50 @@ a {
   color: inherit;
   text-decoration: none;
 }
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+}
 
 * {
   box-sizing: border-box;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  height: auto;
+  padding: 0 3.5rem;
+}
+@media (min-width: 420px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
 }

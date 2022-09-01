@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import LogoSVG from '@/assets/nootris_logo.svg';
 import CartSVG from '@/assets/cart.svg';
+import Container from '../Container';
 
 const NAV_ITEMS = [
   { text: 'FAQ', href: '/faq' },
@@ -21,7 +22,6 @@ const Wrapper = styled.header`
   max-height: 80px;
   background-color: var(--black);
   border-bottom: 1px solid red;
-  padding: 0 3.5rem;
 `;
 const Nav = styled.nav`
   display: flex;
@@ -53,21 +53,23 @@ const Cart = styled.div`
 
 export default function Header() {
   return (
-    <Wrapper>
-      <LogoSVG />
-      <Nav>
-        {NAV_ITEMS.map(({ text, href }) => (
-          <Link key={href} href={href}>
-            <NavLink>{text}</NavLink>
-          </Link>
-        ))}
-        <a href="tel:88006000990">
-          <NavLink>{`8 8 (800) 600-09-90`}</NavLink>
-        </a>
-      </Nav>
-      <Cart>
-        <CartSVG />
-      </Cart>
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <LogoSVG />
+        <Nav>
+          {NAV_ITEMS.map(({ text, href }) => (
+            <Link key={href} href={href}>
+              <NavLink>{text}</NavLink>
+            </Link>
+          ))}
+          <a href="tel:88006000990">
+            <NavLink>{`8 8 (800) 600-09-90`}</NavLink>
+          </a>
+        </Nav>
+        <Cart>
+          <CartSVG />
+        </Cart>
+      </Wrapper>
+    </Container>
   );
 }
