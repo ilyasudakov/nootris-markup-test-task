@@ -7,22 +7,42 @@ import NootrisImage from '@/assets/nootris.png';
 import Image from 'next/future/image';
 
 const Wrapper = styled.section`
-  background-color: var(--yellow-hero);
-  min-height: 100vh;
   position: relative;
+  background-color: var(--yellow-hero);
+  padding: 5rem 0;
+  /* min-height: 100vh; */
 `;
 const Title = styled.h1`
+  position: relative;
   font-size: 8rem;
   font-weight: 700;
+  z-index: 10;
 `;
 const Subline = styled.p<{ size: 'big' | 'small' }>`
   color: var(--black);
   font-size: ${({ size }) => (size === 'big' ? `1.4rem` : `1rem`)};
+  max-width: ${({ size }) => (size === 'big' ? `60%` : `30%`)};
+  z-index: 10;
 `;
 const Slogan = styled.h2`
   color: var(--black);
   font-weight: 700;
   font-size: 2rem;
+  z-index: 10;
+  margin-top: 6.5rem;
+`;
+const ImagesWrapper = styled.div`
+  position: relative;
+`;
+const ImageWrapper = styled(Image)<{ type: 'ginger' | 'nootris' | 'lemon' }>`
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  ${({ type }) => type === 'nootris' && `right: 8%`}
+  ${({ type }) => type === 'lemon' && `right: 12%; bottom: -11rem`}
+  ${({ type }) => type === 'ginger' && `bottom: 2rem`}
 `;
 
 export default function HeroSection() {
@@ -38,11 +58,11 @@ export default function HeroSection() {
         <Subline size="small">
           Вашему организму во время пандемии и сезонных простуд
         </Subline>
-        <div>
-          <Image src={GingerImage} />
-          <Image src={NootrisImage} />
-          <Image src={LemonImage} />
-        </div>
+        <ImagesWrapper>
+          <ImageWrapper type="ginger" src={GingerImage} />
+          <ImageWrapper type="nootris" src={NootrisImage} />
+          <ImageWrapper type="lemon" src={LemonImage} />
+        </ImagesWrapper>
       </Container>
     </Wrapper>
   );

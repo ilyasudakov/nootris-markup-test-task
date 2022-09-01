@@ -100,6 +100,7 @@ export const Advantage = styled.li<{ type: AdvantageTypes }>`
     display: block;
     padding-left: 100%;
     padding-top: 100%;
+    pointer-events:none;
   }`}
   }
 `;

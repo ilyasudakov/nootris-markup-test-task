@@ -4,7 +4,7 @@ export const Wrapper = styled.header`
   position: sticky;
   top: 0;
   background-color: var(--black);
-  z-index: 10;
+  z-index: 100;
 `;
 export const Content = styled.header`
   display: flex;
