@@ -1,4 +1,5 @@
 import Image from 'next/future/image';
+import device from 'src/utils/deviceSizes';
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
@@ -31,21 +32,32 @@ export const PriceDiscount = styled.div<{ oldPrice?: boolean }>`
   ${({ oldPrice }) =>
     oldPrice &&
     `&:after{
-  content: ' ';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  background-color: var(--grey);
-  width: 100%;
-  height: 2px;
+     content: ' ';
+     position: absolute;
+     top: 50%;
+     left: 0;
+     background-color: var(--grey);
+     width: 100%;
+     height: 2px;
 }`};
 `;
 export const AdvantagesWrapper = styled.ul`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 5rem;
+  column-gap: 2rem;
   align-items: flex-start;
   justify-content: space-between;
-  width: 80%;
   margin-top: -1.5rem;
+  width: 100%;
+
+  @media (${device.laptop}) {
+    display: flex;
+    width: 90%;
+  }
+  @media (${device.laptopL}) {
+    width: 80%;
+  }
 `;
 export const StyledImage = styled(Image)`
   display: block;
@@ -70,24 +82,31 @@ export const Advantage = styled.li<{ type: AdvantageTypes }>`
   flex-direction: column;
   align-items: center;
   position: relative;
+  width: fit-content;
 
+  ${({ type }) => type === 'virus' && `grid-column: 2; grid-row: 1;`};
+  ${({ type }) =>
+    type === 'ginger' && `place-self: end;grid-column: 1; grid-row: 1;`};
+  ${({ type }) =>
+    type === 'nootris' &&
+    `place-self: center;grid-column: 1/span 2; grid-row: 2;`};
   ${StyledImage} {
     ${({ type }) => type === 'ginger' && `max-width: 10.5rem`};
     ${({ type }) =>
       type === 'nootris' &&
       `left:50%;
-   top:50%;
-   position:absolute;          
-   transform:rotate(-90deg) translate(-50%,-50%);
-   transform-origin:top left;
-   max-width: 160px;
+       top:50%;
+       position:absolute;          
+       transform:rotate(-90deg) translate(-50%,-50%);
+       transform-origin:top left;
+       max-width: 160px;
   `};
   }
   ${AdvantageText} {
     ${({ type }) =>
       type === 'nootris' &&
       `margin-bottom: 0.5rem; &:last-child {
-  margin-bottom: 0;
+       margin-bottom: 0;
 }`};
   }
   ${ImageWrapper} {
@@ -96,11 +115,18 @@ export const Advantage = styled.li<{ type: AdvantageTypes }>`
     ${({ type }) =>
       type === 'nootris' &&
       `&:before {
-    content: '';
-    display: block;
-    padding-left: 100%;
-    padding-top: 100%;
-    pointer-events:none;
+       content: '';
+       display: block;
+       padding-left: 100%;
+       padding-top: 100%;
+       pointer-events:none;
   }`}
+  }
+  @media ${device.laptop} {
+  }
+  @media ${device.laptopL} {
+    ${StyledImage} {
+      ${({ type }) => type === 'nootris' && `max-width: 160px;`}
+    }
   }
 `;
