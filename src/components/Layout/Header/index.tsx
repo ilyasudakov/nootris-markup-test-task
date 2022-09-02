@@ -30,15 +30,14 @@ const NAV_ITEMS = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const clickOnMobileMenu = () =>
+    setIsMobileMenuOpen((isMobileMenuOpen) => !isMobileMenuOpen);
+
   return (
     <Wrapper>
       <Container>
         <Content>
-          <MobileMenuButtonWrapper
-            onClick={() =>
-              setIsMobileMenuOpen((isMobileMenuOpen) => !isMobileMenuOpen)
-            }
-          >
+          <MobileMenuButtonWrapper onClick={clickOnMobileMenu}>
             <MobileMenuButton isOpen={isMobileMenuOpen} />
           </MobileMenuButtonWrapper>
           <Link href="/">
@@ -54,12 +53,7 @@ export default function Header() {
           </Cart>
         </Content>
         {isMobileMenuOpen && (
-          <Modal
-            isOpen={isMobileMenuOpen}
-            handleClose={() =>
-              setIsMobileMenuOpen((isMobileMenuOpen) => !isMobileMenuOpen)
-            }
-          >
+          <Modal isOpen={isMobileMenuOpen} handleClose={clickOnMobileMenu}>
             <MobileMenu />
           </Modal>
         )}

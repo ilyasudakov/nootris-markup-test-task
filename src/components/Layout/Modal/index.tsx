@@ -4,41 +4,13 @@ import styled from 'styled-components';
 
 import Container from '../Container';
 import CloseIcon from '@/assets/close-outlined.svg';
+import { CloseButton, Content, PortalWrapper, Wrapper } from './styled';
 
 interface IModal {
   children: React.ReactNode;
   isOpen: boolean;
   handleClose: () => void;
 }
-
-const PortalWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--black);
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  overflow-x: scroll;
-`;
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-`;
-const CloseButton = styled.div`
-  display: flex;
-  margin-left: auto;
-  cursor: pointer;
-  margin-bottom: 2rem;
-`;
 
 export default function Modal({ children, isOpen, handleClose }: IModal) {
   if (!isOpen) return null;

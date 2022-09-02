@@ -113,6 +113,7 @@ export const MobileMenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
 `;
 export const MobileMenuButtonWrapper = styled.div`
   display: flex;
@@ -120,6 +121,9 @@ export const MobileMenuButtonWrapper = styled.div`
   width: fit-content;
   height: 30px;
   width: 30px;
+  box-sizing: content-box;
+  padding: 0.25rem;
+  cursor: pointer;
 
   @media (${device.laptop}) {
     display: none;
