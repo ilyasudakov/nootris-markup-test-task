@@ -5,7 +5,17 @@ import CartSVG from '@/assets/cart.svg';
 
 import Container from '../Container';
 
-import { Cart, Nav, NavLink, Wrapper, Content, NavItem } from './styled';
+import {
+  Cart,
+  Nav,
+  NavLink,
+  Wrapper,
+  Content,
+  NavItem,
+  MobileMenuButton,
+  MobileMenuButtonWrapper,
+} from './styled';
+import { useState } from 'react';
 
 const NAV_ITEMS = [
   { text: 'FAQ', href: '/faq' },
@@ -15,11 +25,17 @@ const NAV_ITEMS = [
 ];
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <Wrapper>
       <Container>
         <Content>
-          <LogoSVG />
+          <Link href="/">
+            <NavLink>
+              <LogoSVG />
+            </NavLink>
+          </Link>
           <Nav>
             {NAV_ITEMS.map(({ text, href }) => (
               <NavItem key={href}>
@@ -28,7 +44,7 @@ export default function Header() {
                 </Link>
               </NavItem>
             ))}
-            <NavItem>
+            <NavItem id="profile">
               <Link href="/profile">
                 <NavLink>Личный кабинет</NavLink>
               </Link>
@@ -42,6 +58,13 @@ export default function Header() {
           <Cart>
             <CartSVG />
           </Cart>
+          <MobileMenuButtonWrapper
+            onClick={() =>
+              setIsMobileMenuOpen((isMobileMenuOpen) => !isMobileMenuOpen)
+            }
+          >
+            <MobileMenuButton isOpen={isMobileMenuOpen} />
+          </MobileMenuButtonWrapper>
         </Content>
       </Container>
     </Wrapper>

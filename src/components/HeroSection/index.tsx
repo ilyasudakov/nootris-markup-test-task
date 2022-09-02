@@ -17,7 +17,7 @@ export default function HeroSection() {
   return (
     <Wrapper>
       <Container>
-        <Title>АКТИВИРУЙ ИММУНИТЕТ!</Title>
+        {/* <Title>АКТИВИРУЙ ИММУНИТЕТ!</Title> */}
         <Subline size="big">
           Всего пять секунд в день помогут укрепить иммунитет и повысить
           защитные силы организма
@@ -26,11 +26,11 @@ export default function HeroSection() {
         <Subline size="small">
           Вашему организму во время пандемии и сезонных простуд
         </Subline>
-        <ImagesWrapper>
+        {/* <ImagesWrapper>
           <ImageWrapper type="ginger" src={GingerImage} />
           <ImageWrapper type="nootris" src={NootrisImage} />
           <ImageWrapper type="lemon" src={LemonImage} />
-        </ImagesWrapper>
+        </ImagesWrapper> */}
       </Container>
     </Wrapper>
   );
