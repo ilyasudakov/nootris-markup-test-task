@@ -89,11 +89,9 @@ const DesktopMenu = () => {
 const MobileMenu = () => {
   return (
     <MobileMenuWrapper>
-      <Link href="/">
-        <NavLink style={{ marginBottom: '2rem' }}>
-          <LogoSVG />
-        </NavLink>
-      </Link>
+      <NavLink style={{ marginBottom: '2rem' }}>
+        <LogoSVG />
+      </NavLink>
       {NAV_ITEMS.map(({ text, href }) => (
         <NavItemMobile key={href}>
           <Link href={href}>

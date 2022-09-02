@@ -34,7 +34,7 @@ export default function Modal({ children, isOpen, handleClose }: IModal) {
   return (
     <ReactPortal>
       <PortalWrapper onClick={handleClose}>
-        <Container style={{ height: '100%', paddingTop: '1rem' }}>
+        <Container style={{ height: '100%' }}>
           <Wrapper onClick={(e) => e.stopPropagation()}>
             <CloseButton
               onClick={handleClose}

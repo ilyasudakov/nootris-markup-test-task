@@ -27,4 +27,5 @@ export const CloseButton = styled.div`
   margin-left: auto;
   cursor: pointer;
   margin-bottom: 2rem;
+  margin-top: 1rem;
 `;
