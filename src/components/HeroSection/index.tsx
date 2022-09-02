@@ -5,6 +5,7 @@ import LemonImage from '@/assets/lemon.png';
 import NootrisImage from '@/assets/nootris.png';
 
 import {
+  Content,
   ImagesWrapper,
   ImageWrapper,
   Slogan,
@@ -17,20 +18,22 @@ export default function HeroSection() {
   return (
     <Wrapper>
       <Container>
-        <Title>АКТИВИРУЙ ИММУНИТЕТ!</Title>
-        <Subline size="big">
-          Всего пять секунд в день помогут укрепить иммунитет и повысить
-          защитные силы организма
-        </Subline>
-        <Slogan>NOOTRIS ПОМОГАЕТ</Slogan>
-        <Subline size="small">
-          Вашему организму во время пандемии и сезонных простуд
-        </Subline>
-        <ImagesWrapper>
-          <ImageWrapper type="ginger" src={GingerImage} />
-          <ImageWrapper type="nootris" src={NootrisImage} />
-          <ImageWrapper type="lemon" src={LemonImage} />
-        </ImagesWrapper>
+        <Content>
+          <Title>АКТИВИРУЙ ИММУНИТЕТ!</Title>
+          <Subline size="big">
+            Всего пять секунд в день помогут укрепить иммунитет и повысить
+            защитные силы организма
+          </Subline>
+          <Slogan>NOOTRIS ПОМОГАЕТ</Slogan>
+          <Subline size="small">
+            Вашему организму во время пандемии и сезонных простуд
+          </Subline>
+          <ImagesWrapper>
+            <ImageWrapper type="ginger" src={GingerImage} />
+            <ImageWrapper type="nootris" src={NootrisImage} />
+            <ImageWrapper type="lemon" src={LemonImage} />
+          </ImagesWrapper>
+        </Content>
       </Container>
     </Wrapper>
   );
