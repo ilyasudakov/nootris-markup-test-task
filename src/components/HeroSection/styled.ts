@@ -45,10 +45,10 @@ export const ImageWrapper = styled(Image)<{
   right: 0;
   z-index: 0;
   ${({ type }) =>
-    type === 'ginger' && `max-width: 150px; right: 3rem; bottom: 3rem;`};
+    type === 'ginger' && `max-width: 150px; right: 2.5rem; bottom: 3rem;`};
   ${({ type }) => type === 'nootris' && `max-width: 120px;right: 0`};
   ${({ type }) =>
-    type === 'lemon' && `max-width: 240px; right: 0; bottom: -6rem`};
+    type === 'lemon' && `max-width: 220px; right: 0; bottom: -6rem`};
   @media (${device.mobileL}) {
     ${({ type }) =>
       type === 'ginger' && `max-width: 150px; right: 5rem; bottom: 5rem;`};
@@ -95,6 +95,7 @@ export const Wrapper = styled.section`
     padding: 5rem 0;
     ${Title} {
       max-width: 60%;
+      font-size: 5rem;
     }
     ${Title}, ${Subline} {
       text-align: left;
