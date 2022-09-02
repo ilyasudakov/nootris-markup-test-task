@@ -19,10 +19,16 @@ export const Nav = styled.nav`
   margin-left: auto;
   margin-right: 0.5rem;
   gap: 2rem;
+  display: none;
 
-  @media (${device.laptopL}) {
+  @media (${device.laptop}) {
     margin-left: 0;
     display: flex;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+  @media (${device.laptopL}) {
+    font-size: 1rem;
     gap: 1rem;
   }
 `;
@@ -39,7 +45,7 @@ export const NavItem = styled.span<{ id?: string }>`
   @media (${device.mobileL}) {
     display: ${({ id }) => id === 'profile' && 'flex'};
   }
-  @media (${device.laptopL}) {
+  @media (${device.laptop}) {
     display: flex;
   }
 `;
@@ -76,7 +82,7 @@ export const MobileMenuButton = styled.div<{ isOpen: boolean }>`
 
   &:before,
   &:after {
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease-in-out;
     content: '';
     position: absolute;
     display: block;
@@ -86,12 +92,10 @@ export const MobileMenuButton = styled.div<{ isOpen: boolean }>`
     transform-origin: center;
   }
   &:before {
-    right: 0;
     top: -10px;
   }
   &:after {
     bottom: -10px;
-    right: 0;
   }
   ${({ isOpen }) =>
     isOpen &&
@@ -105,16 +109,25 @@ export const MobileMenuButton = styled.div<{ isOpen: boolean }>`
       width: 30px;
      }`}
 `;
+export const MobileMenuWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 export const MobileMenuButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   width: fit-content;
   height: 30px;
   width: 30px;
-  margin-left: 1rem;
 
-  @media (${device.laptopL}) {
+  @media (${device.laptop}) {
     display: none;
   }
+`;
+export const NavItemMobile = styled.span<{ id?: string }>`
+  padding: 0.25rem;
+  font-size: 1.2rem;
+  cursor: pointer;
 `;
 // --
