@@ -13,7 +13,6 @@ interface IModal {
 }
 
 export default function Modal({ children, isOpen, handleClose }: IModal) {
-  if (!isOpen) return null;
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -30,7 +29,7 @@ export default function Modal({ children, isOpen, handleClose }: IModal) {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!isOpen || !mounted) return null;
   return (
     <ReactPortal>
       <PortalWrapper onClick={handleClose}>
