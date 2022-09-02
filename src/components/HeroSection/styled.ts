@@ -20,6 +20,7 @@ export const Subline = styled.p<{ size: 'big' | 'small' }>`
   }
   @media (${device.tablet}) {
     max-width: ${({ size }) => (size === 'big' ? `60%` : `30%`)};
+    text-align: left;
   }
 `;
 export const Slogan = styled.h2`
@@ -97,7 +98,7 @@ export const Wrapper = styled.section`
       max-width: 60%;
       font-size: 5rem;
     }
-    ${Title}, ${Subline} {
+    ${Title} {
       text-align: left;
     }
   }
@@ -105,8 +106,6 @@ export const Wrapper = styled.section`
     ${Title} {
       font-size: 6rem;
     }
-  }
-  @media (${device.laptopL}) {
   }
   @media (${device.desktop}) {
     ${Title} {
