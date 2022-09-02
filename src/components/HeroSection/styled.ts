@@ -79,7 +79,7 @@ export const Content = styled.div`
   grid-template-columns: auto;
 `;
 export const Wrapper = styled.section`
-  position: relative;
+  /* position: relative; */
   background-color: var(--yellow-hero);
   padding: 2rem 0;
 
@@ -112,4 +112,42 @@ export const Wrapper = styled.section`
       font-size: 8rem;
     }
   }
+`;
+
+export const GradientsWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  z-index: 0;
+`;
+const handleGradientPosition = (id: number) => {
+  switch (id) {
+    case 1:
+      return `top: 0; left: 0`;
+    case 2:
+      return `top: 0; left: 0`;
+    case 3:
+      return `top: 0; left: 0`;
+    case 4:
+      return `top: 0; left: 0`;
+    case 5:
+      return `top: 0; left: 0`;
+    case 6:
+      return `top: 0; left: 0`;
+    case 7:
+      return `top: 0; left: 0`;
+    case 8:
+      return `top: 0; left: 0`;
+  }
+};
+export const Gradient = styled.div<{ _id: number }>`
+  height: auto;
+  position: absolute;
+  top: 0;
+  max-width: 635px;
+  ${({ _id }) => handleGradientPosition(_id)}
 `;
