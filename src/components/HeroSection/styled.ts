@@ -79,7 +79,7 @@ export const Content = styled.div`
   grid-template-columns: auto;
 `;
 export const Wrapper = styled.section`
-  /* position: relative; */
+  position: relative;
   background-color: var(--yellow-hero);
   padding: 2rem 0;
 
@@ -120,18 +120,39 @@ export const GradientsWrapper = styled.div`
   left: 0;
   width: 100vw;
   max-width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
+  height: 100%;
+  max-height: 100%;
   z-index: 0;
+  overflow: hidden;
 `;
 const handleGradientPosition = (id: number) => {
   switch (id) {
     case 1:
-      return `top: 0; left: 0`;
+      return `top: 0; left: 0; max-width: min(634px, 100vh);`;
     case 2:
-      return `top: 0; left: 0`;
+      return `top: 0; right: 0; min-width: auto; max-width: min(786px, 100vh);`;
     case 3:
+      return `bottom: 0; right: 0; min-width: auto; max-width: min(800px, 100vh);`;
+    case 4:
       return `top: 0; left: 0`;
+    case 5:
+      return `top: 0; left: 0`;
+    case 6:
+      return `top: 0; left: 0`;
+    case 7:
+      return `top: 0; left: 0`;
+    case 8:
+      return `top: 0; left: 0`;
+  }
+};
+const handleGradientPositionMobile = (id: number) => {
+  switch (id) {
+    case 1:
+      return `top: 0; left: 0; max-width: min(350px, 100vh);`;
+    case 2:
+      return `top: 0; right: -250px; min-width: min(786px, 100vh); min-height:100%;`;
+    case 3:
+      return `top: 0; right: -250px; min-width: min(600px, 100vh); min-height:100%;`;
     case 4:
       return `top: 0; left: 0`;
     case 5:
@@ -147,7 +168,10 @@ const handleGradientPosition = (id: number) => {
 export const Gradient = styled.div<{ _id: number }>`
   height: auto;
   position: absolute;
-  top: 0;
-  max-width: 635px;
-  ${({ _id }) => handleGradientPosition(_id)}
+  width: 100%;
+  height: 100%;
+  ${({ _id }) => handleGradientPositionMobile(_id)}
+  @media (${device.laptop}) {
+    ${({ _id }) => handleGradientPosition(_id)}
+  }
 `;
