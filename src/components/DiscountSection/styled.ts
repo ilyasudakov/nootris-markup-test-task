@@ -6,13 +6,14 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6rem 0;
+  padding: 3rem 0;
   gap: 2rem;
   @media ${device.tablet} {
     gap: 4.5rem;
+    padding: 6rem 0;
   }
 `;
-export const Heading = styled.h2`
+export const Heading = styled.h1`
   display: flex;
   flex-direction: column;
   align-items: center;

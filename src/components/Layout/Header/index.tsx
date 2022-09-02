@@ -5,14 +5,13 @@ import CartSVG from '@/assets/cart.svg';
 
 import Container from '../Container';
 
-import { Cart, Nav, NavLink, Wrapper, Content } from './styled';
+import { Cart, Nav, NavLink, Wrapper, Content, NavItem } from './styled';
 
 const NAV_ITEMS = [
   { text: 'FAQ', href: '/faq' },
   { text: 'Оплата и доставка', href: '/delivery' },
   { text: 'Возврат', href: '/return' },
   { text: 'Исследования', href: '/research' },
-  { text: 'Личный кабинет', href: '/profile' },
 ];
 
 export default function Header() {
@@ -23,13 +22,22 @@ export default function Header() {
           <LogoSVG />
           <Nav>
             {NAV_ITEMS.map(({ text, href }) => (
-              <Link key={href} href={href}>
-                <NavLink>{text}</NavLink>
-              </Link>
+              <NavItem key={href}>
+                <Link href={href}>
+                  <NavLink>{text}</NavLink>
+                </Link>
+              </NavItem>
             ))}
-            <a href="tel:88006000990">
-              <NavLink>{`8 8 (800) 600-09-90`}</NavLink>
-            </a>
+            <NavItem>
+              <Link href="/profile">
+                <NavLink>Личный кабинет</NavLink>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <a href="tel:88006000990">
+                <NavLink>{`8 8 (800) 600-09-90`}</NavLink>
+              </a>
+            </NavItem>
           </Nav>
           <Cart>
             <CartSVG />

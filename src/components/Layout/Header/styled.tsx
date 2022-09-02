@@ -1,3 +1,4 @@
+import device from 'src/utils/deviceSizes';
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
@@ -14,12 +15,19 @@ export const Content = styled.header`
   max-height: 80px;
 `;
 export const Nav = styled.nav`
-  display: flex;
+  display: none;
   gap: 2rem;
+
+  @media (${device.laptopL}) {
+    display: flex;
+  }
 `;
 export const NavLink = styled.span`
-  padding: 0.25rem;
   display: block;
+  cursor: pointer;
+`;
+export const NavItem = styled.span`
+  padding: 0.25rem;
   cursor: pointer;
 `;
 const CART_ITEMS_COUNT = 1;
