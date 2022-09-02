@@ -1,5 +1,3 @@
-import { StaticImageData } from 'next/future/image';
-
 import Button from '../common/Button';
 import Container from '../Layout/Container';
 
@@ -11,30 +9,14 @@ import {
   Advantage,
   AdvantagesWrapper,
   AdvantageText,
-  AdvantageTypes,
+  NootrisImageWrapper,
   Heading,
-  ImageWrapper,
   PriceDiscount,
   PriceDiscountWrapper,
   StyledImage,
   Wrapper,
+  StyledNootrisImage,
 } from './styled';
-
-const ADVANTAGES_LIST: {
-  image: StaticImageData;
-  text: string;
-  accent: string;
-  type: AdvantageTypes;
-}[] = [
-  { image: GingerImage, text: 'Содержит', accent: 'имбирь', type: 'ginger' },
-  {
-    image: NootrisImage,
-    text: '+ Бесплатная доставка',
-    accent: 'Специальная цена',
-    type: 'nootris',
-  },
-  { image: VirusImage, text: 'Нейтрализует', accent: 'вирусы', type: 'virus' },
-];
 
 export default function DiscountSection() {
   return (
@@ -51,17 +33,31 @@ export default function DiscountSection() {
           <PriceDiscount>690₽</PriceDiscount>
         </PriceDiscountWrapper>
         <AdvantagesWrapper>
-          {ADVANTAGES_LIST.map(({ image, text, type, accent }) => (
-            <Advantage type={type} key={text}>
-              <ImageWrapper type={type}>
-                <StyledImage src={image} />
-              </ImageWrapper>
-              <AdvantageText type={type}>{text}</AdvantageText>
-              <AdvantageText type={type} accent>
-                {accent}
-              </AdvantageText>
-            </Advantage>
-          ))}
+          <Advantage type={'ginger'}>
+            <StyledImage src={GingerImage} />
+            <AdvantageText type={'ginger'}>Содержит</AdvantageText>
+            <AdvantageText type={'ginger'} accent>
+              имбирь
+            </AdvantageText>
+          </Advantage>
+          <Advantage type={'nootris'}>
+            <NootrisImageWrapper>
+              <StyledNootrisImage src={NootrisImage} />
+            </NootrisImageWrapper>
+            <AdvantageText type={'nootris'}>
+              + Бесплатная доставка
+            </AdvantageText>
+            <AdvantageText type={'nootris'} accent>
+              Специальная цена
+            </AdvantageText>
+          </Advantage>
+          <Advantage type={'virus'}>
+            <StyledImage src={VirusImage} />
+            <AdvantageText type={'virus'}>Нейтрализует</AdvantageText>
+            <AdvantageText type={'virus'} accent>
+              вирусы
+            </AdvantageText>
+          </Advantage>
         </AdvantagesWrapper>
         <Button>Оформить заказ!</Button>
       </Wrapper>
