@@ -48,7 +48,7 @@ export const Gradient3 = () => {
   return (
     <svg viewBox="0 0 697 737" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        opacity="0.5"
+        opacity="0.1"
         d="M14.0176 737C14.0176 737 -60.8239 559.292 137.589 473.067C336.002 386.843 439.662 344.352 479.349 204.064C519.035 63.7774 575.464 14.3363 697 0.540436V737H14.0176Z"
         fill="url(#paint0_linear_329_653)"
       />
@@ -74,7 +74,7 @@ export const Gradient4 = () => {
   return (
     <svg viewBox="0 0 1440 432" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        opacity="0.5"
+        opacity="0.1"
         d="M1440 287.643C1263.3 381.904 989.395 278.434 804.403 138.182C630.701 6.48258 423.629 -36.7848 245.702 34.333C48.4416 113.159 0 319.339 0 319.339V432H1440V287.643Z"
         fill="url(#paint0_linear_329_654)"
       />
@@ -100,7 +100,7 @@ export const Gradient5 = () => {
   return (
     <svg viewBox="0 0 542 463" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        opacity="0.5"
+        opacity="0.1"
         d="M0 436.965C174.509 515.136 302.592 399.026 318.317 302.455C334.042 205.884 339.149 46.2653 541.382 0.756104H0V436.965Z"
         fill="url(#paint0_linear_329_655)"
       />
@@ -126,7 +126,7 @@ export const Gradient6 = () => {
   return (
     <svg viewBox="0 0 1286 395" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        opacity="0.5"
+        opacity="0.1"
         d="M1286 290.039C1197.62 413.961 1023.56 431.326 891.709 320.838C777.258 224.94 634.179 115.262 441.142 126.54C185.36 141.492 69.9488 122.143 0.828796 0.756104H1286V290.039Z"
         fill="url(#paint0_linear_329_656)"
       />
@@ -152,7 +152,7 @@ export const Gradient7 = () => {
   return (
     <svg viewBox="0 0 1196 308" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        opacity="0.5"
+        opacity="0.1"
         d="M0 186.052C69.0624 345.412 304.013 335.807 403.334 224.232C491.501 125.178 580.742 57.5607 751.622 98.1034C922.502 138.646 1005.06 175.723 1100.1 136.059C1195.14 96.3962 1195.14 0.756104 1195.14 0.756104H0V186.052Z"
         fill="url(#paint0_linear_329_657)"
       />
@@ -178,7 +178,7 @@ export const Gradient8 = () => {
   return (
     <svg viewBox="0 0 738 366" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        opacity="0.5"
+        opacity="0.1"
         d="M0 57.5579C0 57.5579 176.851 -59.2245 345.542 39.9853C526.022 146.128 524.102 274.499 737.242 365.983H0V57.5579Z"
         fill="url(#paint0_linear_329_658)"
       />

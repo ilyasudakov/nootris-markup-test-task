@@ -5,6 +5,7 @@ import styled from 'styled-components';
 export const Title = styled.h1`
   position: relative;
   font-size: 2.5rem;
+  line-height: 3rem;
   font-weight: 700;
   z-index: 10;
 `;
@@ -86,6 +87,7 @@ export const Wrapper = styled.section`
   @media (${device.mobileL}) {
     ${Title} {
       font-size: 3.5rem;
+      line-height: 3.5rem;
     }
     ${Slogan} {
       font-size: 1.5rem;
@@ -97,19 +99,20 @@ export const Wrapper = styled.section`
     ${Title} {
       max-width: 60%;
       font-size: 5rem;
-    }
-    ${Title} {
+      line-height: 5rem;
       text-align: left;
     }
   }
   @media (${device.laptop}) {
     ${Title} {
       font-size: 6rem;
+      line-height: 6rem;
     }
   }
   @media (${device.desktop}) {
     ${Title} {
       font-size: 8rem;
+      line-height: 8rem;
     }
   }
 `;
@@ -132,15 +135,15 @@ const handleGradientPosition = (id: number) => {
     case 2:
       return `top: 0; right: 0; min-width: auto; max-width: min(786px, 100vh);`;
     case 3:
-      return `bottom: 0; right: 0; min-width: auto; max-width: min(800px, 100vh);`;
+      return `bottom: 0; right: 0; min-width: auto; max-width: min(696px, 100vh);`;
     case 4:
-      return `top: 0; left: 0`;
+      return `bottom: 0; left: 0; width: 100vw;`;
     case 5:
-      return `top: 0; left: 0`;
+      return `top: 0; left: 0; max-width: min(541px, 100vh);`;
     case 6:
-      return `top: 0; left: 0`;
+      return `top: 0; right: 0; max-width: 1285px; min-width: min(1285px, 100vh);`;
     case 7:
-      return `top: 0; left: 0`;
+      return `top: 0; left: 0; max-width: 1192px; min-width: min(1192px, 100vh);`;
     case 8:
       return `top: 0; left: 0`;
   }
@@ -148,25 +151,26 @@ const handleGradientPosition = (id: number) => {
 const handleGradientPositionMobile = (id: number) => {
   switch (id) {
     case 1:
-      return `top: 0; left: 0; max-width: min(350px, 100vh);`;
+      return `align-items: flex-start; top: 0; left: 0; max-width: min(350px, 100vh);`;
     case 2:
-      return `top: 0; right: -250px; min-width: min(786px, 100vh); min-height:100%;`;
+      return `align-items: flex-start; top: 0; right: -250px; min-width: min(786px, 100vh); min-height:100%;`;
     case 3:
-      return `top: 0; right: -250px; min-width: min(600px, 100vh); min-height:100%;`;
+      return `justify-content: flex-end; align-items: flex-end; bottom: 0; right: -250px; min-width: min(600px, 100vh); min-height:100%;`;
     case 4:
-      return `top: 0; left: 0`;
+      return `align-items: flex-end; bottom: 0; left: 0;`;
     case 5:
-      return `top: 0; left: 0`;
+      return `align-items: flex-start; top: 0; left: 0; max-width: min(541px, 100vh);`;
     case 6:
-      return `top: 0; left: 0`;
+      return `justify-content: flex-end; align-items: flex-start; top: 0; right: 0; max-width: min(1285px, 100vh);`;
     case 7:
-      return `top: 0; left: 0`;
+      return `justify-content: flex-start; align-items: flex-start; top: 0; left: 0;`;
     case 8:
-      return `top: 0; left: 0`;
+      return `justify-content: flex-start; align-items: flex-end; bottom: 0; left: 0; max-width: min(737px, 100vh);`;
   }
 };
 export const Gradient = styled.div<{ _id: number }>`
   height: auto;
+  display: flex;
   position: absolute;
   width: 100%;
   height: 100%;

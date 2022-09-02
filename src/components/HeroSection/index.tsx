@@ -39,7 +39,7 @@ export default function HeroSection() {
         <Gradient _id={3}>
           <Gradient3 />
         </Gradient>
-        {/* <Gradient _id={4}>
+        <Gradient _id={4}>
           <Gradient4 />
         </Gradient>
         <Gradient _id={5}>
@@ -53,7 +53,7 @@ export default function HeroSection() {
         </Gradient>
         <Gradient _id={8}>
           <Gradient8 />
-        </Gradient> */}
+        </Gradient>
       </GradientsWrapper>
       <Container>
         <Content>
